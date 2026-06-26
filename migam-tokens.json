@@ -1,0 +1,78 @@
+{
+  "$source": "https://migam.org/ (homepage + 8 subpages, extracted 2026-06)",
+  "color": {
+    "brand": {
+      "teal":        { "value": "#0F6B68", "role": "Primary brand color" },
+      "tealDeep":    { "value": "#0B3534", "role": "Darkest teal / gradient end" },
+      "teal700":     { "value": "#0A514F", "role": "Teal hover/pressed" },
+      "tealBright":  { "value": "#178783", "role": "Logo mark / small icons" },
+      "mint":        { "value": "#6BC4BB", "role": "Soft aqua accent" }
+    },
+    "neutral": {
+      "ink":      { "value": "#1C1C1C", "role": "Primary text & dark buttons" },
+      "inkSoft":  { "value": "#424D4F", "role": "Strong secondary text (cooler)" },
+      "muted":    { "value": "#5A6567", "role": "Secondary text / captions" },
+      "mutedCool":{ "value": "#5F6B6D", "role": "Muted text variant (subpages)" },
+      "white":    { "value": "#FFFFFF", "role": "Background / text on dark" }
+    },
+    "accent": {
+      "orange":     { "value": "#EE7F2B", "role": "Primary CTA — sparingly" },
+      "orangeDark": { "value": "#D96E1D", "role": "Orange hover/pressed" },
+      "amber":      { "value": "#E8A33D", "role": "Warm secondary accent" },
+      "onOrange":   { "value": "#2B1503", "role": "Text on orange (dark brown)" }
+    },
+    "semantic": {
+      "error":   { "value": "#B3261E", "role": "Form errors, required markers" },
+      "success": { "value": "#2E9E63", "role": "Positive status / availability" }
+    },
+    "surface": {
+      "mint50":     { "value": "#F1F7F6" },
+      "mint100":    { "value": "#E7F3F2" },
+      "mint200":    { "value": "#E2EDEB" },
+      "mint300":    { "value": "#D7E6E4" },
+      "borderMint": { "value": "#C2D4D1" },
+      "borderMintSoft": { "value": "#BFDEDB" },
+      "tealTint300": { "value": "#A9C9C5", "role": "Dividers, muted icons" },
+      "tealTint400": { "value": "#7FA39E", "role": "Muted teal text on light" }
+    }
+  },
+  "typography": {
+    "fontHeading": "'Figtree', sans-serif",
+    "fontBody": "'Hanken Grotesk', sans-serif",
+    "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Figtree:wght@600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap&subset=latin-ext",
+    "weights": { "regular": 400, "medium": 500, "semibold": 600, "bold": 700, "black": 800 },
+    "scale": {
+      "hero":     { "size": "44-56px", "font": "heading", "weight": 800, "tracking": "-0.015em" },
+      "h2":       { "size": "34-40px", "font": "heading", "weight": 800 },
+      "h3":       { "size": "22-28px", "font": "heading", "weight": 700 },
+      "lead":     { "size": "17-21px", "font": "body", "weight": 500 },
+      "body":     { "size": "15px",    "font": "body", "weight": 400 },
+      "caption":  { "size": "13-14px", "font": "body", "weight": 500 },
+      "eyebrow":  { "size": "12.5-13.5px", "font": "heading", "weight": 700, "transform": "uppercase", "tracking": "0.06em" }
+    }
+  },
+  "radius": { "pill": "999px", "card": "22px", "md": "18px", "sm": "12px" },
+  "shadow": {
+    "sm": "0 10px 30px rgba(11,53,52,0.10)",
+    "md": "0 18px 48px rgba(11,53,52,0.14)",
+    "lg": "0 24px 60px rgba(11,53,52,0.18)",
+    "hairline": "0 0 0 1px rgba(0,0,0,0.08)",
+    "cta": "0 14px 38px rgba(238,127,43,0.45)"
+  },
+  "space": { "1": "4px", "2": "8px", "3": "12px", "4": "16px", "5": "22px", "6": "30px", "8": "48px", "10": "64px" },
+  "gradient": {
+    "hero": "linear-gradient(135deg, #0F6B68 0%, #0B3534 100%)",
+    "fade": "linear-gradient(180deg, #F1F7F6 0%, #FFFFFF 100%)"
+  },
+  "voice": {
+    "register": "direct, second-person (Ty/Twój), benefit-first, plain Polish",
+    "defaultLanguage": "pl",
+    "rules": [
+      "Lead with the human outcome, not the feature",
+      "Short confident declarative sentences, often with a punchy second clause",
+      "Use concrete numbers for trust",
+      "Capitalize Głuchy/Głuchych (Deaf community, cultural identity)",
+      "Never pity-framed or clinical about Deaf users"
+    ]
+  }
+}

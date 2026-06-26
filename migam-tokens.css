@@ -1,0 +1,80 @@
+/* Migam design tokens — extracted from migam.org (2026-06).
+   Import once at app root; reference vars everywhere. */
+:root {
+  /* Brand & core */
+  --migam-teal:        #0F6B68;
+  --migam-teal-deep:   #0B3534;
+  --migam-teal-700:    #0A514F;
+  --migam-teal-bright: #178783;
+  --migam-mint:        #6BC4BB;
+  --ink:               #1C1C1C;
+  --ink-soft:          #424D4F;  /* strong secondary text */
+  --muted:             #5A6567;
+  --muted-cool:        #5F6B6D;  /* muted variant (subpages) */
+  --white:             #FFFFFF;
+
+  /* Accent — CTAs only */
+  --accent-orange:      #EE7F2B;
+  --accent-orange-dark: #D96E1D;
+  --accent-amber:       #E8A33D;
+  --on-orange:          #2B1503;
+
+  /* Semantic / state */
+  --error:   #B3261E;  /* form errors, required markers */
+  --success: #2E9E63;  /* positive status / availability */
+
+  /* Surfaces & tints (light -> dark teal ramp) */
+  --surface-mint-50:  #F1F7F6;
+  --surface-mint-100: #E7F3F2;
+  --surface-mint-200: #E2EDEB;
+  --surface-mint-300: #D7E6E4;
+  --border-mint:      #C2D4D1;
+  --border-mint-soft: #BFDEDB;
+  --teal-tint-300:    #A9C9C5;  /* dividers, muted icons */
+  --teal-tint-400:    #7FA39E;  /* muted teal text on light */
+
+  /* Typography */
+  --font-heading: 'Figtree', sans-serif;
+  --font-body:    'Hanken Grotesk', sans-serif;
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-semibold:600;
+  --fw-bold:    700;
+  --fw-black:   800;
+  --fs-base: 15px;
+
+  /* Radius */
+  --radius-pill: 999px;
+  --radius-card: 22px;
+  --radius-md:   18px;
+  --radius-sm:   12px;
+
+  /* Shadows (teal-tinted) */
+  --shadow-sm: 0 10px 30px rgba(11,53,52,0.10);
+  --shadow-md: 0 18px 48px rgba(11,53,52,0.14);
+  --shadow-lg: 0 24px 60px rgba(11,53,52,0.18);
+  --shadow-hairline: 0 0 0 1px rgba(0,0,0,0.08);
+  --shadow-cta: 0 14px 38px rgba(238,127,43,0.45);
+
+  /* Spacing (4px grid) */
+  --space-1: 4px;  --space-2: 8px;  --space-3: 12px; --space-4: 16px;
+  --space-5: 22px; --space-6: 30px; --space-8: 48px; --space-10: 64px;
+
+  /* Gradients */
+  --gradient-hero: linear-gradient(135deg, #0F6B68 0%, #0B3534 100%);
+  --gradient-fade: linear-gradient(180deg, #F1F7F6 0%, #FFFFFF 100%);
+}
+
+html, body { margin: 0; padding: 0; background: var(--white); }
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: var(--fw-black); letter-spacing: -0.015em; }
+a { text-decoration: none; color: var(--migam-teal); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
