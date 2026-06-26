@@ -49,3 +49,8 @@ https://raw.githubusercontent.com/Migam-ai/migam-style-guide/main/migam-tokens.j
   only — they are **not** brand colors.
 - Scope is migam.org. The product apps (`migam.ai`, `saas.migam.org`) may carry their own
   identity; audit separately before reusing this there.
+
+## License
+
+Proprietary — **internal Migam use only.** See [`LICENSE`](./LICENSE). Free to use and adapt
+for Migam products, apps, and presentations; not for redistribution or use outside Migam.

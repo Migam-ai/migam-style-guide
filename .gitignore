@@ -1,6 +1,3 @@
-# local artifact working copy (served as index.html in the repo)
-migam-styleboard.html
-
 # OS / editor cruft
 Thumbs.db
 .DS_Store

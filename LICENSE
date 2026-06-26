@@ -1,0 +1,28 @@
+Migam Style Guide — Internal Use License
+
+Copyright (c) 2026 Migam (Migam-ai). All rights reserved.
+
+This repository and its contents (the "Materials") — including the style guide,
+design tokens, source files, the rendered style book, and documentation — are the
+proprietary property of Migam and are provided solely for INTERNAL USE by Migam and
+its authorized employees, contractors, and partners, in connection with building and
+maintaining Migam products, applications, and presentations.
+
+YOU MAY, for internal Migam purposes:
+  - Use, copy, and adapt the Materials to build Migam applications, tools, and
+    presentations.
+  - Reference the files programmatically (e.g., from AI agents and build pipelines).
+
+YOU MAY NOT, without prior written permission from Migam:
+  - Use the Materials for any purpose unrelated to Migam.
+  - Redistribute, sublicense, sell, or publish the Materials outside Migam.
+  - Use the Migam name, logo, colors, or brand assets to represent or imply
+    affiliation with, or endorsement by, Migam for any third party.
+
+The Materials are provided "AS IS", without warranty of any kind, express or implied,
+including but not limited to the warranties of merchantability, fitness for a
+particular purpose, and noninfringement. In no event shall Migam be liable for any
+claim, damages, or other liability arising from or in connection with the Materials
+or their use.
+
+For permissions beyond the scope of this license, contact Migam at https://migam.org.
