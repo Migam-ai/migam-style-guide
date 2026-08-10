@@ -64,6 +64,36 @@
     "hero": "linear-gradient(135deg, #0F6B68 0%, #0B3534 100%)",
     "fade": "linear-gradient(180deg, #F1F7F6 0%, #FFFFFF 100%)"
   },
+  "logo": {
+    "file": "logo-migam-icon.svg",
+    "viewBox": "0 0 274 200",
+    "minHeight": "24px",
+    "minPrintHeight": "8mm",
+    "clearSpace": "36 viewBox units (one dot radius) on all four sides",
+    "backgrounds": ["#FFFFFF", "#F1F7F6", "#E7F3F2", "gradient.hero"],
+    "note": "Use the file as-is. Never redraw, recolor, or restyle the mark.",
+    "icons": {
+      "dir": "migam-favicons/",
+      "deploy": "Copy to the web root — site.webmanifest uses root-absolute icon paths.",
+      "themeColor": "#0F6B68",
+      "files": {
+        "favicon.svg":           { "shape": "square, viewBox 0 -37 274 274", "background": "transparent" },
+        "favicon.ico":           { "sizes": [16, 32, 48], "background": "transparent" },
+        "apple-touch-icon.png":  { "size": 180, "background": "#FFFFFF", "note": "Opaque — iOS renders transparency as black" },
+        "icon-192.png":          { "size": 192, "background": "transparent", "purpose": "any" },
+        "icon-512.png":          { "size": 512, "background": "transparent", "purpose": "any" },
+        "icon-512-maskable.png": { "size": 512, "background": "#FFFFFF", "purpose": "maskable" },
+        "site.webmanifest":      { "note": "PWA manifest" }
+      }
+    },
+    "gradients": {
+      "$note": "Logo-only. NOT palette colors — never use these in UI, charts, or text.",
+      "tealHook":  { "stops": ["#046369", "#03A5A9"], "direction": "top-left to bottom-right" },
+      "tealDot":   { "stops": ["#01ABAA", "#06656E"], "direction": "left to right" },
+      "amberHook": { "stops": ["#F3BF3A", "#DB5B37"], "direction": "bottom-left to top-right" },
+      "amberDot":  { "stops": ["#DA5837", "#F7D03B"], "direction": "left to right" }
+    }
+  },
   "voice": {
     "register": "direct, second-person (Ty/Twój), benefit-first, plain Polish",
     "defaultLanguage": "pl",

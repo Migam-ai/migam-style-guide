@@ -1,4 +1,8 @@
 <title>Migam — Style Book</title>
+<link rel="icon" href="migam-favicons/favicon.ico" sizes="32x32">
+<link rel="icon" href="migam-favicons/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="migam-favicons/apple-touch-icon.png">
+<meta name="theme-color" content="#0F6B68">
 <style>
 /* latin-ext */
 @font-face {
@@ -138,6 +142,35 @@ code{font-family:var(--mono);font-size:.85em;}
 .hero .meta span{font-family:var(--mono);font-size:13px;background:rgba(255,255,255,.12);
   border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:6px 14px;color:#fff;}
 
+/* logo */
+.logo-tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;}
+.logo-tile{border-radius:22px;border:1px solid var(--bd);padding:36px 24px 18px;display:flex;
+  flex-direction:column;align-items:center;gap:24px;box-shadow:var(--sh-sm);}
+.logo-tile svg{display:block;max-width:100%;height:auto;}
+.lt-lbl{font-family:var(--mono);font-size:12.5px;color:var(--muted);text-align:center;}
+.lt-white{background:#fff;}
+.lt-mint{background:var(--s50);}
+.lt-dark{background:linear-gradient(135deg,#0F6B68 0%,#0B3534 100%);border-color:transparent;}
+.lt-dark .lt-lbl{color:rgba(255,255,255,.75);}
+.logo-specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:18px;}
+.spec{background:#fff;border:1px solid var(--bd);border-radius:22px;padding:26px 28px;box-shadow:var(--sh-sm);}
+.spec h3{font-size:19px;margin-bottom:8px;}
+.spec p{font-size:14.5px;color:var(--muted);}
+.clearbox{margin:20px auto 0;max-width:260px;border:2px dashed var(--bd-soft);border-radius:14px;padding:13.1%;}
+.clearbox svg{width:100%;height:auto;display:block;}
+.sizes{display:flex;align-items:flex-end;justify-content:center;gap:28px;margin-top:26px;flex-wrap:wrap;}
+.sizes figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:10px;}
+.sizes figcaption{font-family:var(--mono);font-size:12px;color:var(--muted);}
+.logo-dl{margin-top:26px;}
+.icons-row{display:flex;flex-wrap:wrap;gap:26px;align-items:flex-end;margin:22px 0 4px;}
+.icons-row figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:9px;}
+.icons-row img{display:block;background:#fff;}
+.icons-row .ios{border-radius:22%;border:1px solid var(--bd);}
+.icons-row .mask{border-radius:999px;border:1px solid var(--bd);}
+.icons-row figcaption{font-family:var(--mono);font-size:11.5px;color:var(--muted);text-align:center;}
+.snippet{font-family:var(--mono);font-size:12.5px;line-height:1.75;background:var(--s50);border:1px solid var(--bd);
+  border-radius:14px;padding:16px 18px;overflow-x:auto;margin:16px 0 0;color:var(--ink);}
+
 /* section scaffold */
 section{padding:64px 0;border-bottom:1px solid var(--s200);}
 section:nth-of-type(even){background:linear-gradient(180deg,var(--s50) 0%,#fff 100%);}
@@ -220,12 +253,14 @@ section:nth-of-type(even){background:linear-gradient(180deg,var(--s50) 0%,#fff 1
 .file .fn{font-family:var(--mono);font-size:14px;font-weight:600;color:var(--teal);}
 .file .fd{font-size:13.5px;color:var(--muted);margin-top:6px;flex:1;}
 .fbtns{display:flex;gap:8px;margin-top:16px;}
-.fbtns button{font-family:var(--heading);font-weight:700;font-size:13px;border-radius:999px;cursor:pointer;border:none;padding:8px 16px;transition:background .15s,transform .15s;}
-.fbtns button:focus-visible{outline:3px solid var(--amber);outline-offset:2px;}
+.fbtns button,.fbtns a{font-family:var(--heading);font-weight:700;font-size:13px;border-radius:999px;cursor:pointer;
+  border:none;padding:8px 16px;transition:background .15s,transform .15s;display:inline-flex;align-items:center;}
+.fbtns button:focus-visible,.fbtns a:focus-visible{outline:3px solid var(--amber);outline-offset:2px;}
+.fbtns a.dl{color:#fff;}
 .fbtns .dl{background:var(--teal);color:#fff;}
 .fbtns .dl:hover{background:var(--teal-700);transform:translateY(-1px);}
-.fbtns .cp{background:#fff;color:var(--teal);border:1.5px solid var(--bd-soft);}
-.fbtns .cp:hover{background:var(--s100);}
+.fbtns .cp,.fbtns .png{background:#fff;color:var(--teal);border:1.5px solid var(--bd-soft);}
+.fbtns .cp:hover,.fbtns .png:hover{background:var(--s100);}
 .dl-all{margin-top:24px;font-family:var(--heading);font-weight:700;font-size:15px;border:none;cursor:pointer;border-radius:999px;background:var(--ink);color:#fff;padding:14px 28px;display:inline-flex;align-items:center;gap:9px;transition:background .15s,transform .15s;}
 .dl-all:hover{background:#000;transform:translateY(-2px);}
 .dl-all:focus-visible{outline:3px solid var(--amber);outline-offset:3px;}
@@ -248,10 +283,126 @@ footer{padding:40px 0 56px;color:var(--muted);font-size:13.5px;}
   </div>
 </header>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="migam-mark" viewBox="0 0 274 200">
+      <linearGradient id="mg-teal" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="128" y2="128">
+        <stop offset="0" stop-color="#046369"/><stop offset="1" stop-color="#03a5a9"/>
+      </linearGradient>
+      <linearGradient id="mg-teal-dot" gradientUnits="userSpaceOnUse" x1="56" y1="164" x2="128" y2="164">
+        <stop offset="0" stop-color="#01abaa"/><stop offset="1" stop-color="#06656e"/>
+      </linearGradient>
+      <linearGradient id="mg-amber" gradientUnits="userSpaceOnUse" x1="146" y1="128" x2="274" y2="0">
+        <stop offset="0" stop-color="#f3bf3a"/><stop offset="1" stop-color="#db5b37"/>
+      </linearGradient>
+      <linearGradient id="mg-amber-dot" gradientUnits="userSpaceOnUse" x1="146" y1="164" x2="218" y2="164">
+        <stop offset="0" stop-color="#da5837"/><stop offset="1" stop-color="#f7d03b"/>
+      </linearGradient>
+      <path fill="url(#mg-teal)" d="M64 0a64 64 0 0 1 64 64v100H92v-36H64A64 64 0 0 1 64 0Z"/>
+      <circle fill="url(#mg-teal-dot)" cx="92" cy="164" r="36"/>
+      <path fill="url(#mg-amber)" d="M210 0a64 64 0 0 1 0 128H182v36h-36V64A64 64 0 0 1 210 0Z"/>
+      <circle fill="url(#mg-amber-dot)" cx="182" cy="164" r="36"/>
+    </symbol>
+  </defs>
+</svg>
+
 <section>
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow">01 · Paleta</div>
+      <div class="eyebrow">01 · Logo</div>
+      <h2>Znak Migam</h2>
+      <p>Jeden plik, bez wyjątków: <code>logo-migam-icon.svg</code>. Znaku nie przerysowujemy, nie przebarwiamy i nie składamy z tokenów. Gradienty należą wyłącznie do logo — w interfejsie i na slajdach kolorem marki pozostaje turkus <code>#0F6B68</code>.</p>
+    </div>
+
+    <div class="logo-tiles">
+      <div class="logo-tile lt-white">
+        <svg width="137" height="100" viewBox="0 0 274 200" aria-hidden="true" focusable="false"><use href="#migam-mark"/></svg>
+        <span class="lt-lbl">Na bieli · #FFFFFF</span>
+      </div>
+      <div class="logo-tile lt-mint">
+        <svg width="137" height="100" viewBox="0 0 274 200" aria-hidden="true" focusable="false"><use href="#migam-mark"/></svg>
+        <span class="lt-lbl">Na miętowym tle · #F1F7F6</span>
+      </div>
+      <div class="logo-tile lt-dark">
+        <svg width="137" height="100" viewBox="0 0 274 200" aria-hidden="true" focusable="false"><use href="#migam-mark"/></svg>
+        <span class="lt-lbl">Na gradiencie hero · 0F6B68 → 0B3534</span>
+      </div>
+    </div>
+
+    <div class="logo-specs">
+      <div class="spec">
+        <h3>Pole ochronne</h3>
+        <p>Wokół znaku zostaw wolną przestrzeń równą promieniowi kropki — <code>36</code> jednostek viewBox, czyli ok. 13% szerokości logo. Nic jej nie przecina: ani tekst, ani krawędź slajdu, ani linia.</p>
+        <div class="clearbox">
+          <svg viewBox="0 0 274 200" aria-hidden="true" focusable="false"><use href="#migam-mark"/></svg>
+        </div>
+      </div>
+      <div class="spec">
+        <h3>Minimalny rozmiar</h3>
+        <p>Na ekranie <code>24px</code> wysokości, w druku <code>8mm</code>. Poniżej tej granicy kropki przestają się czytać i znak zamienia się w plamę.</p>
+        <div class="sizes">
+          <figure><svg width="33" height="24" viewBox="0 0 274 200" aria-hidden="true" focusable="false"><use href="#migam-mark"/></svg><figcaption>24px · min</figcaption></figure>
+          <figure><svg width="55" height="40" viewBox="0 0 274 200" aria-hidden="true" focusable="false"><use href="#migam-mark"/></svg><figcaption>40px</figcaption></figure>
+          <figure><svg width="110" height="80" viewBox="0 0 274 200" aria-hidden="true" focusable="false"><use href="#migam-mark"/></svg><figcaption>80px</figcaption></figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="spec" style="margin-top:18px;">
+      <h3>Favicony i ikony aplikacji</h3>
+      <p>Gotowy komplet leży w <code>migam-favicons/</code> — nie generuj ikon ręcznie. Kwadratowy <code>favicon.svg</code> to jedyne dozwolone przekadrowanie znaku: viewBox dostaje 37 jednostek u góry i u dołu, żeby zrobić z proporcji 274×200 kwadrat. Nic więcej się nie zmienia.</p>
+      <div class="icons-row">
+        <figure><img src="migam-favicons/favicon.svg" width="16" height="16" alt=""><figcaption>favicon.svg<br>16px</figcaption></figure>
+        <figure><img src="migam-favicons/favicon.svg" width="32" height="32" alt=""><figcaption>favicon.svg<br>32px</figcaption></figure>
+        <figure><img class="ios" src="migam-favicons/apple-touch-icon.png" width="64" height="64" alt=""><figcaption>apple-touch-icon<br>180px · białe tło</figcaption></figure>
+        <figure><img src="migam-favicons/icon-192.png" width="64" height="64" alt=""><figcaption>icon-192 / 512<br>purpose: any</figcaption></figure>
+        <figure><img class="mask" src="migam-favicons/icon-512-maskable.png" width="64" height="64" alt=""><figcaption>maskable 512<br>pole bezpieczne 80%</figcaption></figure>
+      </div>
+      <p style="margin-top:20px;">Wpięcie w <code>&lt;head&gt;</code>. Pliki kopiujemy do <strong>korzenia serwisu</strong> — <code>site.webmanifest</code> wskazuje ikony ścieżkami bezwzględnymi, więc w podkatalogu po cichu zwrócą 404.</p>
+      <pre class="snippet">&lt;link rel="icon" href="/favicon.ico" sizes="32x32"&gt;
+&lt;link rel="icon" href="/favicon.svg" type="image/svg+xml"&gt;
+&lt;link rel="apple-touch-icon" href="/apple-touch-icon.png"&gt;
+&lt;link rel="manifest" href="/site.webmanifest"&gt;
+&lt;meta name="theme-color" content="#0F6B68"&gt;</pre>
+      <p style="margin-top:16px;"><code>theme-color</code> w znaczniku i w manifeście trzyma turkus marki <code>#0F6B68</code>. To kolor interfejsu przeglądarki i Androida, a nie znaku — gradienty logo tu nie wchodzą.</p>
+    </div>
+
+    <div class="dd" style="margin-top:18px;">
+      <div class="col do">
+        <h3><span class="mk">✓</span> Rób</h3>
+        <ul>
+          <li>Używaj pliku SVG w oryginale — skaluj przez jeden wymiar, drugi zostaw automatyczny.</li>
+          <li>Stawiaj znak na bieli, mięcie <code>#F1F7F6</code> / <code>#E7F3F2</code> lub ciemnym gradiencie hero.</li>
+          <li>Na zdjęciu albo wzorze najpierw podłóż białą kartę lub pigułkę.</li>
+          <li>Gdy znak niesie treść, daj <code>alt="Migam"</code>; gdy jest dekoracją obok słowa „Migam" — <code>alt=""</code>.</li>
+        </ul>
+      </div>
+      <div class="col dont">
+        <h3><span class="mk">✕</span> Nie rób</h3>
+        <ul>
+          <li>Nie przebarwiaj znaku — żadnego płaskiego turkusu, kontry na biało ani wersji czarnej.</li>
+          <li>Nie dodawaj cieni, poświat, obrysów ani filtrów.</li>
+          <li>Nie obracaj, nie pochylaj, nie rozciągaj i nie rozdzielaj obu połówek.</li>
+          <li>Nie kładź znaku na pomarańczu ani mięty na mięcie.</li>
+          <li>Nie używaj go jako punktora, tekstury czy znaku w tekście.</li>
+          <li>Nie składaj własnego lockupu z logotypem — po sygnaturę zgłoś się do brandu.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="fbtns logo-dl">
+      <button class="dl" data-target="src-logo" data-name="logo-migam-icon.svg" data-type="image/svg+xml">⬇ Pobierz SVG</button>
+      <button class="png" data-target="src-logo" data-name="logo-migam-icon.png" data-width="1024">⬇ Pobierz PNG 1024px</button>
+      <button class="cp" data-target="src-logo">Kopiuj kod SVG</button>
+    </div>
+    <p class="dl-note">SVG wejdzie prosto w PowerPointa i Keynote. Google Slides nie przyjmuje SVG — tam wstaw PNG (tło przezroczyste).</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">02 · Paleta</div>
       <h2>Kolory</h2>
       <p>Głęboki turkus to kolor wiodący na białym i miętowym tle. Pomarańcz jest zarezerwowany wyłącznie dla głównego wezwania do działania.</p>
     </div>
@@ -297,7 +448,7 @@ footer{padding:40px 0 56px;color:var(--muted);font-size:13.5px;}
 <section>
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow">02 · Typografia</div>
+      <div class="eyebrow">03 · Typografia</div>
       <h2>Figtree + Hanken Grotesk</h2>
       <p>Figtree (600/700/800) prowadzi nagłówki i etykiety. Hanken Grotesk (400–700) niesie treść. Subset latin-ext utrzymuje polskie znaki ostrymi: ąęłżśćóń.</p>
     </div>
@@ -326,7 +477,7 @@ footer{padding:40px 0 56px;color:var(--muted);font-size:13.5px;}
 <section>
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow">03 · Komponenty</div>
+      <div class="eyebrow">04 · Komponenty</div>
       <h2>Przyciski, pigułki, karty</h2>
       <p>Pełne zaokrąglenie (radius 999px) to podpis marki. Cienie zawsze utrzymane w turkusie, nigdy szare. Najedź, by zobaczyć stany.</p>
     </div>
@@ -373,7 +524,7 @@ footer{padding:40px 0 56px;color:var(--muted);font-size:13.5px;}
 <section>
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow">04 · Ton głosu</div>
+      <div class="eyebrow">05 · Ton głosu</div>
       <h2>Jak piszemy</h2>
       <p>Bezpośrednio, w drugiej osobie, od korzyści. Krótkie pewne zdania, konkretne liczby, prosty polski. „Głuchy" piszemy wielką literą — to tożsamość, nie diagnoza.</p>
     </div>
@@ -389,7 +540,7 @@ footer{padding:40px 0 56px;color:var(--muted);font-size:13.5px;}
 <section>
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow">05 · Zasady</div>
+      <div class="eyebrow">06 · Zasady</div>
       <h2>Rób / nie rób</h2>
     </div>
     <div class="dd">
@@ -422,7 +573,7 @@ footer{padding:40px 0 56px;color:var(--muted);font-size:13.5px;}
 <section>
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow">06 · Dla agentów AI</div>
+      <div class="eyebrow">07 · Dla agentów AI</div>
       <h2>Pliki do podłączenia</h2>
       <p>Obok tej strony leżą maszynowo-czytelne tokeny i pełny przewodnik. Wrzuć je w kontekst agenta budującego aplikacje lub prezentacje Migam.</p>
     </div>
@@ -433,8 +584,12 @@ footer{padding:40px 0 56px;color:var(--muted);font-size:13.5px;}
         <div class="fbtns"><button class="dl" data-target="src-css" data-name="migam-tokens.css" data-type="text/css">⬇ Pobierz</button><button class="cp" data-target="src-css">Kopiuj</button></div></div>
       <div class="file"><div class="fn">migam-tokens.json</div><div class="fd">Tokeny w JSON — do pipeline'ów build / generatorów themów.</div>
         <div class="fbtns"><button class="dl" data-target="src-json" data-name="migam-tokens.json" data-type="application/json">⬇ Pobierz</button><button class="cp" data-target="src-json">Kopiuj</button></div></div>
+      <div class="file"><div class="fn">logo-migam-icon.svg</div><div class="fd">Znak Migam. Używaj w oryginale — zasady w sekcji 01 i w §1.1 przewodnika.</div>
+        <div class="fbtns"><button class="dl" data-target="src-logo" data-name="logo-migam-icon.svg" data-type="image/svg+xml">⬇ SVG</button><button class="png" data-target="src-logo" data-name="logo-migam-icon.png" data-width="1024">⬇ PNG</button></div></div>
+      <div class="file"><div class="fn">migam-favicons/</div><div class="fd">Komplet ikon: favicon (.ico + kwadratowy .svg), apple-touch, PWA 192/512, maskable, manifest. Kopiuj do korzenia serwisu.</div>
+        <div class="fbtns"><a class="dl" href="https://github.com/Migam-ai/migam-style-guide/tree/main/migam-favicons">Otwórz na GitHubie ↗</a></div></div>
     </div>
-    <button class="dl-all" id="dlAll">⬇ Pobierz wszystkie trzy pliki</button>
+    <button class="dl-all" id="dlAll">⬇ Pobierz wszystkie pliki</button>
     <p class="dl-note">Pliki są wbudowane w tę stronę — działają offline, bez serwera. Udostępnij link do artefaktu, a każdy pobierze je stąd.</p>
   </div>
 </section>
@@ -468,6 +623,88 @@ accessible** — never clinical or corporate-cold. Visual signature:
 
 Accessibility is the product *and* the design ethic — always meet WCAG AA contrast, respect
 `prefers-reduced-motion`, and write descriptive `alt` text (the real site does both).
+
+### 1.1 Logo mark
+
+The Migam mark ships next to this guide as **[`logo-migam-icon.svg`](./logo-migam-icon.svg)**
+— two rounded hook forms with dots, teal on the left, amber→orange on the right.
+`viewBox="0 0 274 200"`, gradient-filled, already carries `role="img"` + `aria-label="Migam"`.
+
+**Always use the file.** Never redraw the mark, rebuild it from tokens, or approximate it
+with shapes — reference or inline the SVG.
+
+```html
+<!-- standalone / meaningful (e.g. header link, slide title) -->
+<img src="logo-migam-icon.svg" alt="Migam" width="110" height="80">
+
+<!-- decorative — next to the word "Migam" in text, so the alt would be a duplicate -->
+<img src="logo-migam-icon.svg" alt="" width="34" height="25">
+```
+
+**Logo-only colors.** The mark carries its own gradients. They are **not** palette tokens —
+never pull them into UI, charts, text, or backgrounds. Brand UI stays on `#0F6B68`.
+
+| Part | Gradient | Direction |
+|---|---|---|
+| Teal hook | `#046369` → `#03A5A9` | diagonal, top-left → bottom-right |
+| Teal dot | `#01ABAA` → `#06656E` | horizontal, left → right |
+| Amber hook | `#F3BF3A` → `#DB5B37` | diagonal, bottom-left → top-right |
+| Amber dot | `#DA5837` → `#F7D03B` | horizontal, left → right |
+
+**Placement rules**
+
+- **Clear space:** keep free space equal to a dot radius (`36` viewBox units ≈ 13% of the
+  logo's width) on all four sides. Nothing — text, edges, rules — crosses it.
+- **Minimum size:** `24px` tall on screen, `8mm` in print. The dots stop reading below that.
+- **Backgrounds:** white, `--surface-mint-50/100`, or the dark teal hero gradient — the mark
+  holds on all three. On photos or busy fills, set it on a white pill/card first.
+- **Scaling:** set one dimension and let the other follow (`height:auto`); the `viewBox`
+  preserves the ratio. Never stretch to fit a box.
+- **Slides:** PowerPoint and Keynote take the SVG directly. Google Slides doesn't — export a
+  PNG from the style book page (`⬇ PNG` button in the Logo section) and place that.
+
+**Don't**
+
+- Don't recolor the mark — no flat teal, no white/black knockout, no inverted variant.
+- Don't add shadows, glows, strokes, or filters to it.
+- Don't rotate, skew, stretch, crop, or rearrange the two halves.
+- Don't place it on orange, or mint-on-mint where the teal half loses contrast.
+- Don't use the mark as a bullet, divider, texture, or inline-in-body-text glyph.
+- Don't pair it with a hand-set "migam" wordmark — if you need a lockup, ask brand first.
+
+### 1.2 Favicons & app icons
+
+A generated set lives in **[`migam-favicons/`](./migam-favicons/)** — use it as-is for any
+Migam web app, tool, or hosted deck. Don't regenerate icons by hand.
+
+| File | Size | Background | Where it's used |
+|---|---|---|---|
+| `favicon.svg` | square, `viewBox="0 -37 274 274"` | transparent | Modern browsers — scales to any tab size. |
+| `favicon.ico` | 16 / 32 / 48 | transparent | Legacy browsers, Windows shortcuts. |
+| `apple-touch-icon.png` | 180×180 | **white** | iOS home screen. Opaque on purpose — iOS renders transparency as black. |
+| `icon-192.png`, `icon-512.png` | 192, 512 | transparent | PWA / Android, `purpose: any`. |
+| `icon-512-maskable.png` | 512 | **white** | Android adaptive icon, `purpose: maskable`. Mark sits inside the 80% safe circle. |
+| `site.webmanifest` | — | — | PWA manifest. `theme_color` is brand teal `#0F6B68`, not a logo gradient. |
+
+The square favicon is the **one sanctioned reframing** of the mark: the viewBox gains 37
+units top and bottom to square the 274×200 artwork. Nothing is recolored, moved, or rescaled.
+Don't invent other crops.
+
+**Deployment:** `site.webmanifest` references its icons with root-absolute paths
+(`/icon-192.png`), so the icon files must be copied to the **web root** — not left in a
+subfolder. If your app is served from a sub-path, rewrite those `src` values to match, or
+the manifest icons 404 silently.
+
+```html
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0F6B68">
+```
+
+Keep `theme-color` in the markup and in the manifest identical, and keep both on brand teal
+— that value paints browser and Android UI chrome, so the logo-only gradients don't belong there.
 
 ---
 
@@ -707,6 +944,7 @@ presentation text.
 
 **Do**
 - Use teal `#0F6B68` as the default brand color and white/mint as backgrounds.
+- Use the shipped `logo-migam-icon.svg` as-is, with its clear space (see §1.1).
 - Reserve orange `#EE7F2B` for the single primary action; pair it with dark text `#2B1503`.
 - Make buttons fully pill-shaped (`border-radius:999px`).
 - Use teal-tinted shadows, never gray ones.
@@ -716,6 +954,7 @@ presentation text.
 
 **Don't**
 - Don't use pure black `#000000` for text — use ink `#1C1C1C`.
+- Don't redraw, recolor, or restyle the logo — and don't reuse its gradients as UI colors.
 - Don't use orange for links, body text, or decorative fills.
 - Don't introduce off-brand accent colors (flag colors are for the language switcher only).
 - Don't use sharp 0px corners on buttons or cards.
@@ -728,7 +967,10 @@ presentation text.
 ## 6. Machine-readable tokens
 
 A JSON token file (`migam-tokens.json`) and a CSS variables file (`migam-tokens.css`) sit
-next to this guide for direct import into apps or build pipelines.
+next to this guide for direct import into apps or build pipelines. The logo mark sits there
+too, as `logo-migam-icon.svg` — the JSON carries its metadata under `logo` (file name,
+`viewBox`, clear space, minimum size, and its logo-only gradients). The gradients are
+deliberately **absent from `migam-tokens.css`** so they can't leak into UI code.
 </script>
 <script type="text/plain" id="src-css">/* Migam design tokens — extracted from migam.org (2026-06).
    Import once at app root; reference vars everywhere. */
@@ -877,6 +1119,36 @@ a { text-decoration: none; color: var(--migam-teal); }
     "hero": "linear-gradient(135deg, #0F6B68 0%, #0B3534 100%)",
     "fade": "linear-gradient(180deg, #F1F7F6 0%, #FFFFFF 100%)"
   },
+  "logo": {
+    "file": "logo-migam-icon.svg",
+    "viewBox": "0 0 274 200",
+    "minHeight": "24px",
+    "minPrintHeight": "8mm",
+    "clearSpace": "36 viewBox units (one dot radius) on all four sides",
+    "backgrounds": ["#FFFFFF", "#F1F7F6", "#E7F3F2", "gradient.hero"],
+    "note": "Use the file as-is. Never redraw, recolor, or restyle the mark.",
+    "icons": {
+      "dir": "migam-favicons/",
+      "deploy": "Copy to the web root — site.webmanifest uses root-absolute icon paths.",
+      "themeColor": "#0F6B68",
+      "files": {
+        "favicon.svg":           { "shape": "square, viewBox 0 -37 274 274", "background": "transparent" },
+        "favicon.ico":           { "sizes": [16, 32, 48], "background": "transparent" },
+        "apple-touch-icon.png":  { "size": 180, "background": "#FFFFFF", "note": "Opaque — iOS renders transparency as black" },
+        "icon-192.png":          { "size": 192, "background": "transparent", "purpose": "any" },
+        "icon-512.png":          { "size": 512, "background": "transparent", "purpose": "any" },
+        "icon-512-maskable.png": { "size": 512, "background": "#FFFFFF", "purpose": "maskable" },
+        "site.webmanifest":      { "note": "PWA manifest" }
+      }
+    },
+    "gradients": {
+      "$note": "Logo-only. NOT palette colors — never use these in UI, charts, or text.",
+      "tealHook":  { "stops": ["#046369", "#03A5A9"], "direction": "top-left to bottom-right" },
+      "tealDot":   { "stops": ["#01ABAA", "#06656E"], "direction": "left to right" },
+      "amberHook": { "stops": ["#F3BF3A", "#DB5B37"], "direction": "bottom-left to top-right" },
+      "amberDot":  { "stops": ["#DA5837", "#F7D03B"], "direction": "left to right" }
+    }
+  },
   "voice": {
     "register": "direct, second-person (Ty/Twój), benefit-first, plain Polish",
     "defaultLanguage": "pl",
@@ -890,6 +1162,32 @@ a { text-decoration: none; color: var(--migam-teal); }
   }
 }
 </script>
+<script type="text/plain" id="src-logo"><svg xmlns="http://www.w3.org/2000/svg" width="274" height="200" viewBox="0 0 274 200" role="img" aria-label="Migam">
+  <title>Migam</title>
+  <defs>
+    <linearGradient id="mg-teal" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="128" y2="128">
+      <stop offset="0" stop-color="#046369"/>
+      <stop offset="1" stop-color="#03a5a9"/>
+    </linearGradient>
+    <linearGradient id="mg-teal-dot" gradientUnits="userSpaceOnUse" x1="56" y1="164" x2="128" y2="164">
+      <stop offset="0" stop-color="#01abaa"/>
+      <stop offset="1" stop-color="#06656e"/>
+    </linearGradient>
+    <linearGradient id="mg-amber" gradientUnits="userSpaceOnUse" x1="146" y1="128" x2="274" y2="0">
+      <stop offset="0" stop-color="#f3bf3a"/>
+      <stop offset="1" stop-color="#db5b37"/>
+    </linearGradient>
+    <linearGradient id="mg-amber-dot" gradientUnits="userSpaceOnUse" x1="146" y1="164" x2="218" y2="164">
+      <stop offset="0" stop-color="#da5837"/>
+      <stop offset="1" stop-color="#f7d03b"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#mg-teal)" d="M64 0a64 64 0 0 1 64 64v100H92v-36H64A64 64 0 0 1 64 0Z"/>
+  <circle fill="url(#mg-teal-dot)" cx="92" cy="164" r="36"/>
+  <path fill="url(#mg-amber)" d="M210 0a64 64 0 0 1 0 128H182v36h-36V64A64 64 0 0 1 210 0Z"/>
+  <circle fill="url(#mg-amber-dot)" cx="182" cy="164" r="36"/>
+</svg>
+</script>
 <script>
 (function(){
   function txt(id){return document.getElementById(id).textContent;}
@@ -902,6 +1200,24 @@ a { text-decoration: none; color: var(--migam-teal); }
   document.querySelectorAll('button.dl').forEach(function(b){
     b.addEventListener('click',function(){save(b.dataset.target,b.dataset.name,b.dataset.type);});
   });
+  function savePng(id,name,width){
+    var svg=txt(id),vb=/viewBox="0 0 ([\d.]+) ([\d.]+)"/.exec(svg);
+    var ratio=vb?(+vb[2]/+vb[1]):1,w=width||1024,h=Math.round(w*ratio);
+    var img=new Image();
+    img.onload=function(){
+      var c=document.createElement('canvas');c.width=w;c.height=h;
+      c.getContext('2d').drawImage(img,0,0,w,h);
+      c.toBlob(function(blob){
+        var url=URL.createObjectURL(blob),a=document.createElement('a');
+        a.href=url;a.download=name;document.body.appendChild(a);a.click();
+        setTimeout(function(){URL.revokeObjectURL(url);a.remove();},0);
+      },'image/png');
+    };
+    img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);
+  }
+  document.querySelectorAll('button.png').forEach(function(b){
+    b.addEventListener('click',function(){savePng(b.dataset.target,b.dataset.name,+b.dataset.width);});
+  });
   document.querySelectorAll('button.cp').forEach(function(b){
     b.addEventListener('click',function(){
       navigator.clipboard.writeText(txt(b.dataset.target)).then(function(){
@@ -913,7 +1229,8 @@ a { text-decoration: none; color: var(--migam-teal); }
   if(all){all.addEventListener('click',function(){
     [['src-guide','MIGAM_STYLE_GUIDE.md','text/markdown'],
      ['src-css','migam-tokens.css','text/css'],
-     ['src-json','migam-tokens.json','application/json']
+     ['src-json','migam-tokens.json','application/json'],
+     ['src-logo','logo-migam-icon.svg','image/svg+xml']
     ].forEach(function(f,i){setTimeout(function(){save(f[0],f[1],f[2]);},i*350);});
   });}
 })();

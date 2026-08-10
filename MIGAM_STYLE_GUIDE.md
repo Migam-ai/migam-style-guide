@@ -28,6 +28,88 @@ accessible** — never clinical or corporate-cold. Visual signature:
 Accessibility is the product *and* the design ethic — always meet WCAG AA contrast, respect
 `prefers-reduced-motion`, and write descriptive `alt` text (the real site does both).
 
+### 1.1 Logo mark
+
+The Migam mark ships next to this guide as **[`logo-migam-icon.svg`](./logo-migam-icon.svg)**
+— two rounded hook forms with dots, teal on the left, amber→orange on the right.
+`viewBox="0 0 274 200"`, gradient-filled, already carries `role="img"` + `aria-label="Migam"`.
+
+**Always use the file.** Never redraw the mark, rebuild it from tokens, or approximate it
+with shapes — reference or inline the SVG.
+
+```html
+<!-- standalone / meaningful (e.g. header link, slide title) -->
+<img src="logo-migam-icon.svg" alt="Migam" width="110" height="80">
+
+<!-- decorative — next to the word "Migam" in text, so the alt would be a duplicate -->
+<img src="logo-migam-icon.svg" alt="" width="34" height="25">
+```
+
+**Logo-only colors.** The mark carries its own gradients. They are **not** palette tokens —
+never pull them into UI, charts, text, or backgrounds. Brand UI stays on `#0F6B68`.
+
+| Part | Gradient | Direction |
+|---|---|---|
+| Teal hook | `#046369` → `#03A5A9` | diagonal, top-left → bottom-right |
+| Teal dot | `#01ABAA` → `#06656E` | horizontal, left → right |
+| Amber hook | `#F3BF3A` → `#DB5B37` | diagonal, bottom-left → top-right |
+| Amber dot | `#DA5837` → `#F7D03B` | horizontal, left → right |
+
+**Placement rules**
+
+- **Clear space:** keep free space equal to a dot radius (`36` viewBox units ≈ 13% of the
+  logo's width) on all four sides. Nothing — text, edges, rules — crosses it.
+- **Minimum size:** `24px` tall on screen, `8mm` in print. The dots stop reading below that.
+- **Backgrounds:** white, `--surface-mint-50/100`, or the dark teal hero gradient — the mark
+  holds on all three. On photos or busy fills, set it on a white pill/card first.
+- **Scaling:** set one dimension and let the other follow (`height:auto`); the `viewBox`
+  preserves the ratio. Never stretch to fit a box.
+- **Slides:** PowerPoint and Keynote take the SVG directly. Google Slides doesn't — export a
+  PNG from the style book page (`⬇ PNG` button in the Logo section) and place that.
+
+**Don't**
+
+- Don't recolor the mark — no flat teal, no white/black knockout, no inverted variant.
+- Don't add shadows, glows, strokes, or filters to it.
+- Don't rotate, skew, stretch, crop, or rearrange the two halves.
+- Don't place it on orange, or mint-on-mint where the teal half loses contrast.
+- Don't use the mark as a bullet, divider, texture, or inline-in-body-text glyph.
+- Don't pair it with a hand-set "migam" wordmark — if you need a lockup, ask brand first.
+
+### 1.2 Favicons & app icons
+
+A generated set lives in **[`migam-favicons/`](./migam-favicons/)** — use it as-is for any
+Migam web app, tool, or hosted deck. Don't regenerate icons by hand.
+
+| File | Size | Background | Where it's used |
+|---|---|---|---|
+| `favicon.svg` | square, `viewBox="0 -37 274 274"` | transparent | Modern browsers — scales to any tab size. |
+| `favicon.ico` | 16 / 32 / 48 | transparent | Legacy browsers, Windows shortcuts. |
+| `apple-touch-icon.png` | 180×180 | **white** | iOS home screen. Opaque on purpose — iOS renders transparency as black. |
+| `icon-192.png`, `icon-512.png` | 192, 512 | transparent | PWA / Android, `purpose: any`. |
+| `icon-512-maskable.png` | 512 | **white** | Android adaptive icon, `purpose: maskable`. Mark sits inside the 80% safe circle. |
+| `site.webmanifest` | — | — | PWA manifest. `theme_color` is brand teal `#0F6B68`, not a logo gradient. |
+
+The square favicon is the **one sanctioned reframing** of the mark: the viewBox gains 37
+units top and bottom to square the 274×200 artwork. Nothing is recolored, moved, or rescaled.
+Don't invent other crops.
+
+**Deployment:** `site.webmanifest` references its icons with root-absolute paths
+(`/icon-192.png`), so the icon files must be copied to the **web root** — not left in a
+subfolder. If your app is served from a sub-path, rewrite those `src` values to match, or
+the manifest icons 404 silently.
+
+```html
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0F6B68">
+```
+
+Keep `theme-color` in the markup and in the manifest identical, and keep both on brand teal
+— that value paints browser and Android UI chrome, so the logo-only gradients don't belong there.
+
 ---
 
 ## 2. Design tokens
@@ -266,6 +348,7 @@ presentation text.
 
 **Do**
 - Use teal `#0F6B68` as the default brand color and white/mint as backgrounds.
+- Use the shipped `logo-migam-icon.svg` as-is, with its clear space (see §1.1).
 - Reserve orange `#EE7F2B` for the single primary action; pair it with dark text `#2B1503`.
 - Make buttons fully pill-shaped (`border-radius:999px`).
 - Use teal-tinted shadows, never gray ones.
@@ -275,6 +358,7 @@ presentation text.
 
 **Don't**
 - Don't use pure black `#000000` for text — use ink `#1C1C1C`.
+- Don't redraw, recolor, or restyle the logo — and don't reuse its gradients as UI colors.
 - Don't use orange for links, body text, or decorative fills.
 - Don't introduce off-brand accent colors (flag colors are for the language switcher only).
 - Don't use sharp 0px corners on buttons or cards.
@@ -287,4 +371,7 @@ presentation text.
 ## 6. Machine-readable tokens
 
 A JSON token file (`migam-tokens.json`) and a CSS variables file (`migam-tokens.css`) sit
-next to this guide for direct import into apps or build pipelines.
+next to this guide for direct import into apps or build pipelines. The logo mark sits there
+too, as `logo-migam-icon.svg` — the JSON carries its metadata under `logo` (file name,
+`viewBox`, clear space, minimum size, and its logo-only gradients). The gradients are
+deliberately **absent from `migam-tokens.css`** so they can't leak into UI code.
