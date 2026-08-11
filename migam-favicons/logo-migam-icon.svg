@@ -2,20 +2,24 @@
   <title>Migam</title>
   <defs>
     <linearGradient id="mg-teal" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="128" y2="128">
-      <stop offset="0" stop-color="#046369"/>
-      <stop offset="1" stop-color="#03a5a9"/>
+      <stop offset="0" stop-color="#015f62"/>
+      <stop offset="0.5" stop-color="#008f96"/>
+      <stop offset="1" stop-color="#00a299"/>
     </linearGradient>
     <linearGradient id="mg-teal-dot" gradientUnits="userSpaceOnUse" x1="56" y1="164" x2="128" y2="164">
-      <stop offset="0" stop-color="#01abaa"/>
-      <stop offset="1" stop-color="#06656e"/>
+      <stop offset="0" stop-color="#00a299"/>
+      <stop offset="0.5" stop-color="#008f96"/>
+      <stop offset="1" stop-color="#015f62"/>
     </linearGradient>
     <linearGradient id="mg-amber" gradientUnits="userSpaceOnUse" x1="146" y1="128" x2="274" y2="0">
-      <stop offset="0" stop-color="#f3bf3a"/>
-      <stop offset="1" stop-color="#db5b37"/>
+      <stop offset="0" stop-color="#f8db36"/>
+      <stop offset="0.5" stop-color="#e99138"/>
+      <stop offset="1" stop-color="#db6136"/>
     </linearGradient>
     <linearGradient id="mg-amber-dot" gradientUnits="userSpaceOnUse" x1="146" y1="164" x2="218" y2="164">
-      <stop offset="0" stop-color="#da5837"/>
-      <stop offset="1" stop-color="#f7d03b"/>
+      <stop offset="0" stop-color="#db6136"/>
+      <stop offset="0.5" stop-color="#e99138"/>
+      <stop offset="1" stop-color="#f8db36"/>
     </linearGradient>
   </defs>
   <path fill="url(#mg-teal)" d="M64 0a64 64 0 0 1 64 64v100H92v-36H64A64 64 0 0 1 64 0Z"/>

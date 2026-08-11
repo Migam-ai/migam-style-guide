@@ -49,7 +49,12 @@ https://raw.githubusercontent.com/Migam-ai/migam-style-guide/main/logo-migam-ico
 ## Notes
 
 - Source of truth is the marketing site, [migam.org](https://migam.org/) — reflects what's
-  shipping, not a formal brand manual. If an official brand book exists, reconcile against it.
+  shipping, not a formal brand manual.
+- The 2025 print brandbook (`migam-brandbook-2025.pdf`) specifies different color and type
+  values. **The shipped web palette wins** for anything digital — it's what's already public.
+  See §7 of the style guide for the side-by-side; it's informative only, not a spec to build
+  from. The brandbook does remain authoritative for the logo mark itself, and the logo
+  gradients here have been aligned to its Gradient 1 / Gradient 2 stops.
 - The flag colors on the site (`#C8102E`, `#012169`, …) belong to the **language switcher**
   only — they are **not** brand colors.
 - Scope is migam.org. The product apps (`migam.ai`, `saas.migam.org`) may carry their own

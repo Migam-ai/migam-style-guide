@@ -10,6 +10,9 @@
 > **How to use:** Treat the tokens in §2 as the single source of truth. Never invent new
 > brand colors or fonts. When in doubt, prefer teal `#0F6B68`, the Figtree/Hanken Grotesk
 > pairing, pill-shaped buttons, and generous rounded cards on soft mint backgrounds.
+>
+> The 2025 print brandbook lists different color and type values. **§2 still wins** — it
+> matches the brand as actually published. §7 explains the gap and is informative only.
 
 ---
 
@@ -48,12 +51,16 @@ with shapes — reference or inline the SVG.
 **Logo-only colors.** The mark carries its own gradients. They are **not** palette tokens —
 never pull them into UI, charts, text, or backgrounds. Brand UI stays on `#0F6B68`.
 
+These are the brandbook's two supplementary ramps — **Gradient 1** (teal) and **Gradient 2**
+(amber), from `migam-brandbook-2025.pdf` p. 7 — applied forward or reversed per element.
+Unlike the palette in §2, the mark *does* follow the brandbook; see §7.2.
+
 | Part | Gradient | Direction |
 |---|---|---|
-| Teal hook | `#046369` → `#03A5A9` | diagonal, top-left → bottom-right |
-| Teal dot | `#01ABAA` → `#06656E` | horizontal, left → right |
-| Amber hook | `#F3BF3A` → `#DB5B37` | diagonal, bottom-left → top-right |
-| Amber dot | `#DA5837` → `#F7D03B` | horizontal, left → right |
+| Teal hook | `#015F62` → `#008F96` → `#00A299` | diagonal, top-left → bottom-right |
+| Teal dot | `#00A299` → `#008F96` → `#015F62` | horizontal, left → right |
+| Amber hook | `#F8DB36` → `#E99138` → `#DB6136` | diagonal, bottom-left → top-right |
+| Amber dot | `#DB6136` → `#E99138` → `#F8DB36` | horizontal, left → right |
 
 **Placement rules**
 
@@ -375,3 +382,76 @@ next to this guide for direct import into apps or build pipelines. The logo mark
 too, as `logo-migam-icon.svg` — the JSON carries its metadata under `logo` (file name,
 `viewBox`, clear space, minimum size, and its logo-only gradients). The gradients are
 deliberately **absent from `migam-tokens.css`** so they can't leak into UI code.
+
+---
+
+## 7. Appendix — relationship to the 2025 brandbook (informative)
+
+> **INFORMATIVE ONLY — DO NOT IMPLEMENT FROM THIS SECTION.**
+> Nothing here overrides §2. If you are an agent building anything, keep using the §2
+> tokens. This section exists so that someone comparing this guide against
+> `migam-brandbook-2025.pdf` understands *why* the two differ, and doesn't "fix" one to
+> match the other.
+
+`migam-brandbook-2025.pdf` (*Księga znaku graficznego*) is the print-era brand manual. It
+covers the logo — construction, variants, clear space, minimum sizes, forbidden usage,
+business cards, letterhead — plus one page of color (p. 7) and one of type (p. 8).
+
+**§2 of this guide does not match that color page, and that is intentional.** These tokens
+were sampled from the *live, shipped* migam.org (June 2026). That site is the brand as it
+actually exists in public today: indexed, linked, screenshotted, and familiar to users.
+Generating new work against the 2025 print values would make that work look *inconsistent
+with Migam* to anyone who has seen the website — which is the opposite of this guide's job.
+
+**So: the published web palette wins. §2 is authoritative for all digital output.**
+
+### 7.1 Where they differ
+
+Color (brandbook p. 7, *Kolorystyka firmowa* — verified against the drawn swatch fills):
+
+| Role | Brandbook 2025 | This guide (shipped web) | ΔE76 |
+| --- | --- | --- | --- |
+| Dominant / black | `#000000` "Czarny" | `#1C1C1C` `--ink` | 10.3 |
+| Teal accent | `#015F62` "Akcent" | `#0F6B68` `--migam-teal` | 6.2 |
+| Orange accent | `#DB6136` "Akcent 2" | `#EE7F2B` `--accent-orange` | 18.4 |
+| Gradient 1 mid | `#008F96` | `#178783` `--migam-teal-bright` | 7.3 |
+| Gradient 1 end | `#00A299` | `#6BC4BB` `--migam-mint` | 16.0 |
+| Gradient 2 mid | `#E99138` | `#E8A33D` `--accent-amber` | 10.8 |
+| Gradient 2 end | `#F8DB36` | *(no equivalent)* | — |
+
+ΔE76 ≈ 2–3 is the threshold below which two colors read as "the same color." Everything
+above is past it, so these are genuine differences, not rounding.
+
+Two structural differences beyond the hex values:
+
+- **Dominance is inverted.** The brandbook makes black dominant and teal merely "Akcent."
+  The shipped site — and therefore §2 — makes teal the primary brand color and near-black
+  just the text color.
+- **Scope.** The brandbook defines five color entries and no UI system. The mint surface
+  ramp, borders, text ramp, and `--error`/`--success` in §2 have no brandbook counterpart;
+  they don't contradict it, they simply aren't covered by it.
+
+Type (brandbook p. 8): specifies **Roboto** for headings and **Verdana** for long text.
+The shipped site uses **Figtree** + **Hanken Grotesk** (§2.2). Same reasoning applies —
+follow §2.
+
+### 7.2 What the brandbook is still the authority on
+
+Everything about the **mark itself**, which this guide only summarizes in §1.1:
+construction and proportions, the seven approved variants, clear-space geometry, minimum
+print sizes (15 / 10 / 8 mm), forbidden modifications, and stationery layouts. The logo is
+a registered EU trademark (**EUTM 018964343**) owned by Migam S.A.; recoloring, restretching,
+or redrawing it is prohibited regardless of anything in §2.
+
+The gradients in `logo-migam-icon.svg` were previously sampled off the web and sat slightly
+off-spec; as of 2026-08 they have been **aligned to the brandbook's Gradient 1 / Gradient 2
+stops** (§1.1), and `migam-favicons/` was re-rendered from the corrected mark at identical
+framing. So the mark is now brandbook-accurate even though the surrounding UI palette is
+not — that split is deliberate. Use the SVG as-is; don't re-sample it from screenshots.
+
+### 7.3 Open question (not for agents to resolve)
+
+The web palette and the print brandbook should eventually be reconciled — either by
+retargeting the site to the 2025 values, or by issuing a digital addendum that ratifies
+the shipped palette. That's a brand-owner decision. Until it's made, this appendix is the
+record of the gap, and §2 remains what you build against.

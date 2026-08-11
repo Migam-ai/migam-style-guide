@@ -287,16 +287,24 @@ footer{padding:40px 0 56px;color:var(--muted);font-size:13.5px;}
   <defs>
     <symbol id="migam-mark" viewBox="0 0 274 200">
       <linearGradient id="mg-teal" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="128" y2="128">
-        <stop offset="0" stop-color="#046369"/><stop offset="1" stop-color="#03a5a9"/>
+        <stop offset="0" stop-color="#015f62"/>
+        <stop offset="0.5" stop-color="#008f96"/>
+        <stop offset="1" stop-color="#00a299"/>
       </linearGradient>
       <linearGradient id="mg-teal-dot" gradientUnits="userSpaceOnUse" x1="56" y1="164" x2="128" y2="164">
-        <stop offset="0" stop-color="#01abaa"/><stop offset="1" stop-color="#06656e"/>
+        <stop offset="0" stop-color="#00a299"/>
+        <stop offset="0.5" stop-color="#008f96"/>
+        <stop offset="1" stop-color="#015f62"/>
       </linearGradient>
       <linearGradient id="mg-amber" gradientUnits="userSpaceOnUse" x1="146" y1="128" x2="274" y2="0">
-        <stop offset="0" stop-color="#f3bf3a"/><stop offset="1" stop-color="#db5b37"/>
+        <stop offset="0" stop-color="#f8db36"/>
+        <stop offset="0.5" stop-color="#e99138"/>
+        <stop offset="1" stop-color="#db6136"/>
       </linearGradient>
       <linearGradient id="mg-amber-dot" gradientUnits="userSpaceOnUse" x1="146" y1="164" x2="218" y2="164">
-        <stop offset="0" stop-color="#da5837"/><stop offset="1" stop-color="#f7d03b"/>
+        <stop offset="0" stop-color="#db6136"/>
+        <stop offset="0.5" stop-color="#e99138"/>
+        <stop offset="1" stop-color="#f8db36"/>
       </linearGradient>
       <path fill="url(#mg-teal)" d="M64 0a64 64 0 0 1 64 64v100H92v-36H64A64 64 0 0 1 64 0Z"/>
       <circle fill="url(#mg-teal-dot)" cx="92" cy="164" r="36"/>
@@ -646,10 +654,10 @@ never pull them into UI, charts, text, or backgrounds. Brand UI stays on `#0F6B6
 
 | Part | Gradient | Direction |
 |---|---|---|
-| Teal hook | `#046369` → `#03A5A9` | diagonal, top-left → bottom-right |
-| Teal dot | `#01ABAA` → `#06656E` | horizontal, left → right |
-| Amber hook | `#F3BF3A` → `#DB5B37` | diagonal, bottom-left → top-right |
-| Amber dot | `#DA5837` → `#F7D03B` | horizontal, left → right |
+| Teal hook | `#015F62` → `#008F96` → `#00A299` | diagonal, top-left → bottom-right |
+| Teal dot | `#00A299` → `#008F96` → `#015F62` | horizontal, left → right |
+| Amber hook | `#F8DB36` → `#E99138` → `#DB6136` | diagonal, bottom-left → top-right |
+| Amber dot | `#DB6136` → `#E99138` → `#F8DB36` | horizontal, left → right |
 
 **Placement rules**
 
@@ -1143,10 +1151,10 @@ a { text-decoration: none; color: var(--migam-teal); }
     },
     "gradients": {
       "$note": "Logo-only. NOT palette colors — never use these in UI, charts, or text.",
-      "tealHook":  { "stops": ["#046369", "#03A5A9"], "direction": "top-left to bottom-right" },
-      "tealDot":   { "stops": ["#01ABAA", "#06656E"], "direction": "left to right" },
-      "amberHook": { "stops": ["#F3BF3A", "#DB5B37"], "direction": "bottom-left to top-right" },
-      "amberDot":  { "stops": ["#DA5837", "#F7D03B"], "direction": "left to right" }
+      "tealHook":  { "stops": ["#015F62", "#008F96", "#00A299"], "direction": "top-left to bottom-right", "ramp": "Gradient 1" },
+      "tealDot":   { "stops": ["#00A299", "#008F96", "#015F62"], "direction": "left to right", "ramp": "Gradient 1 reversed" },
+      "amberHook": { "stops": ["#F8DB36", "#E99138", "#DB6136"], "direction": "bottom-left to top-right", "ramp": "Gradient 2 reversed" },
+      "amberDot":  { "stops": ["#DB6136", "#E99138", "#F8DB36"], "direction": "left to right", "ramp": "Gradient 2" }
     }
   },
   "voice": {
@@ -1166,20 +1174,24 @@ a { text-decoration: none; color: var(--migam-teal); }
   <title>Migam</title>
   <defs>
     <linearGradient id="mg-teal" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="128" y2="128">
-      <stop offset="0" stop-color="#046369"/>
-      <stop offset="1" stop-color="#03a5a9"/>
+      <stop offset="0" stop-color="#015f62"/>
+      <stop offset="0.5" stop-color="#008f96"/>
+      <stop offset="1" stop-color="#00a299"/>
     </linearGradient>
     <linearGradient id="mg-teal-dot" gradientUnits="userSpaceOnUse" x1="56" y1="164" x2="128" y2="164">
-      <stop offset="0" stop-color="#01abaa"/>
-      <stop offset="1" stop-color="#06656e"/>
+      <stop offset="0" stop-color="#00a299"/>
+      <stop offset="0.5" stop-color="#008f96"/>
+      <stop offset="1" stop-color="#015f62"/>
     </linearGradient>
     <linearGradient id="mg-amber" gradientUnits="userSpaceOnUse" x1="146" y1="128" x2="274" y2="0">
-      <stop offset="0" stop-color="#f3bf3a"/>
-      <stop offset="1" stop-color="#db5b37"/>
+      <stop offset="0" stop-color="#f8db36"/>
+      <stop offset="0.5" stop-color="#e99138"/>
+      <stop offset="1" stop-color="#db6136"/>
     </linearGradient>
     <linearGradient id="mg-amber-dot" gradientUnits="userSpaceOnUse" x1="146" y1="164" x2="218" y2="164">
-      <stop offset="0" stop-color="#da5837"/>
-      <stop offset="1" stop-color="#f7d03b"/>
+      <stop offset="0" stop-color="#db6136"/>
+      <stop offset="0.5" stop-color="#e99138"/>
+      <stop offset="1" stop-color="#f8db36"/>
     </linearGradient>
   </defs>
   <path fill="url(#mg-teal)" d="M64 0a64 64 0 0 1 64 64v100H92v-36H64A64 64 0 0 1 64 0Z"/>
