@@ -72,6 +72,15 @@
     "clearSpace": "36 viewBox units (one dot radius) on all four sides",
     "backgrounds": ["#FFFFFF", "#F1F7F6", "#E7F3F2", "gradient.hero"],
     "note": "Use the file as-is. Never redraw, recolor, or restyle the mark.",
+    "horizontal": {
+      "file": "logo-migam-horizontal.svg",
+      "viewBox": "0 0 2316.31 756.95",
+      "minHeight": "34px",
+      "wordmark": "black — trademarked artwork, never recolor; light backgrounds only",
+      "backgrounds": ["#FFFFFF", "#F1F7F6", "#E7F3F2"],
+      "use": "Where the brand introduces itself: page headers, doc covers, slide title pages. Use the mark alone in compact/square or dark contexts.",
+      "note": "Wordmark paths verbatim from the trademarked horizontal lockup; mark re-set from logo-migam-icon.svg (2026-08)."
+    },
     "icons": {
       "dir": "migam-favicons/",
       "deploy": "Copy to the web root — site.webmanifest uses root-absolute icon paths.",

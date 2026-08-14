@@ -31,25 +31,41 @@ accessible** — never clinical or corporate-cold. Visual signature:
 Accessibility is the product *and* the design ethic — always meet WCAG AA contrast, respect
 `prefers-reduced-motion`, and write descriptive `alt` text (the real site does both).
 
-### 1.1 Logo mark
+### 1.1 Logo mark & horizontal lockup
 
-The Migam mark ships next to this guide as **[`logo-migam-icon.svg`](./logo-migam-icon.svg)**
-— two rounded hook forms with dots, teal on the left, amber→orange on the right.
-`viewBox="0 0 274 200"`, gradient-filled, already carries `role="img"` + `aria-label="Migam"`.
+Two logo files ship next to this guide:
 
-**Always use the file.** Never redraw the mark, rebuild it from tokens, or approximate it
-with shapes — reference or inline the SVG.
+- **[`logo-migam-icon.svg`](./logo-migam-icon.svg)** — the mark alone: two rounded hook
+  forms with dots, teal on the left, amber→orange on the right. `viewBox="0 0 274 200"`,
+  gradient-filled, already carries `role="img"` + `aria-label="Migam"`.
+- **[`logo-migam-horizontal.svg`](./logo-migam-horizontal.svg)** — the horizontal lockup:
+  the same mark plus the lowercase **"migam" wordmark** to its right, taken verbatim from
+  the registered trademark artwork. `viewBox="0 0 2316.31 756.95"`, wordmark in black.
+
+**Which one:** use the **horizontal lockup** where the brand introduces itself — page
+headers, document covers, slide title/closing pages, email footers. Use the **mark alone**
+in compact or square contexts — favicons, avatars, app icons, tight navbars, or next to
+text that already says "Migam." The lockup's wordmark is black, so it only goes on light
+backgrounds (white / mint); on the dark hero gradient use the mark alone.
+
+**Always use the files.** Never redraw the mark, rebuild it from tokens, approximate it
+with shapes, or hand-set a wordmark next to the mark — reference or inline the SVGs.
 
 ```html
-<!-- standalone / meaningful (e.g. header link, slide title) -->
+<!-- brand introduction (page header, slide cover) -->
+<img src="logo-migam-horizontal.svg" alt="Migam" width="245" height="80">
+
+<!-- standalone mark / meaningful (e.g. compact header link) -->
 <img src="logo-migam-icon.svg" alt="Migam" width="110" height="80">
 
 <!-- decorative — next to the word "Migam" in text, so the alt would be a duplicate -->
 <img src="logo-migam-icon.svg" alt="" width="34" height="25">
 ```
 
-**Logo-only colors.** The mark carries its own gradients. They are **not** palette tokens —
-never pull them into UI, charts, text, or backgrounds. Brand UI stays on `#0F6B68`.
+**Logo-only colors.** The mark carries its own gradients, and the lockup's wordmark is
+pure black — trademarked artwork, exempt from the "never `#000`" text rule. Neither is a
+palette token: never pull the gradients into UI, charts, text, or backgrounds, and never
+recolor the wordmark to ink or teal. Brand UI stays on `#0F6B68`.
 
 These are the brandbook's two supplementary ramps — **Gradient 1** (teal) and **Gradient 2**
 (amber), from `migam-brandbook-2025.pdf` p. 7 — applied forward or reversed per element.
@@ -64,11 +80,15 @@ Unlike the palette in §2, the mark *does* follow the brandbook; see §7.2.
 
 **Placement rules**
 
-- **Clear space:** keep free space equal to a dot radius (`36` viewBox units ≈ 13% of the
-  logo's width) on all four sides. Nothing — text, edges, rules — crosses it.
-- **Minimum size:** `24px` tall on screen, `8mm` in print. The dots stop reading below that.
-- **Backgrounds:** white, `--surface-mint-50/100`, or the dark teal hero gradient — the mark
-  holds on all three. On photos or busy fills, set it on a white pill/card first.
+- **Clear space:** keep free space equal to a dot radius on all four sides — `36` viewBox
+  units ≈ 13% of the mark's width; on the lockup the same physical distance ≈ 13% of its
+  *height*. Nothing — text, edges, rules — crosses it.
+- **Minimum size:** mark `24px` tall on screen, `8mm` in print — the dots stop reading below
+  that. Lockup `34px` tall on screen (the mark inside it is 72% of the height); in print
+  follow the brandbook's per-variant minimums (15/10/8 mm).
+- **Backgrounds:** the mark holds on white, `--surface-mint-50/100`, and the dark teal hero
+  gradient. The lockup (black wordmark) is **light backgrounds only**. On photos or busy
+  fills, set either on a white pill/card first.
 - **Scaling:** set one dimension and let the other follow (`height:auto`); the `viewBox`
   preserves the ratio. Never stretch to fit a box.
 - **Slides:** PowerPoint and Keynote take the SVG directly. Google Slides doesn't — export a
@@ -77,11 +97,14 @@ Unlike the palette in §2, the mark *does* follow the brandbook; see §7.2.
 **Don't**
 
 - Don't recolor the mark — no flat teal, no white/black knockout, no inverted variant.
-- Don't add shadows, glows, strokes, or filters to it.
-- Don't rotate, skew, stretch, crop, or rearrange the two halves.
-- Don't place it on orange, or mint-on-mint where the teal half loses contrast.
+- Don't recolor the lockup's wordmark either — it stays black, so don't put it on dark.
+- Don't add shadows, glows, strokes, or filters to either file.
+- Don't rotate, skew, stretch, crop, or rearrange the two halves — or the mark/wordmark
+  spacing in the lockup.
+- Don't place them on orange, or mint-on-mint where the teal half loses contrast.
 - Don't use the mark as a bullet, divider, texture, or inline-in-body-text glyph.
-- Don't pair it with a hand-set "migam" wordmark — if you need a lockup, ask brand first.
+- Don't hand-set your own "migam" wordmark next to the mark — the sanctioned lockup is
+  `logo-migam-horizontal.svg`; for any other arrangement, ask brand first.
 
 ### 1.2 Favicons & app icons
 
@@ -355,7 +378,8 @@ presentation text.
 
 **Do**
 - Use teal `#0F6B68` as the default brand color and white/mint as backgrounds.
-- Use the shipped `logo-migam-icon.svg` as-is, with its clear space (see §1.1).
+- Use the shipped logo files as-is with their clear space — `logo-migam-horizontal.svg`
+  where the brand introduces itself, `logo-migam-icon.svg` in compact contexts (see §1.1).
 - Reserve orange `#EE7F2B` for the single primary action; pair it with dark text `#2B1503`.
 - Make buttons fully pill-shaped (`border-radius:999px`).
 - Use teal-tinted shadows, never gray ones.
@@ -378,10 +402,11 @@ presentation text.
 ## 6. Machine-readable tokens
 
 A JSON token file (`migam-tokens.json`) and a CSS variables file (`migam-tokens.css`) sit
-next to this guide for direct import into apps or build pipelines. The logo mark sits there
-too, as `logo-migam-icon.svg` — the JSON carries its metadata under `logo` (file name,
-`viewBox`, clear space, minimum size, and its logo-only gradients). The gradients are
-deliberately **absent from `migam-tokens.css`** so they can't leak into UI code.
+next to this guide for direct import into apps or build pipelines. The logo files sit there
+too — `logo-migam-icon.svg` and `logo-migam-horizontal.svg` — and the JSON carries their
+metadata under `logo` (file names, `viewBox`, clear space, minimum sizes, and the logo-only
+gradients). The gradients are deliberately **absent from `migam-tokens.css`** so they can't
+leak into UI code.
 
 ---
 
@@ -448,6 +473,13 @@ off-spec; as of 2026-08 they have been **aligned to the brandbook's Gradient 1 /
 stops** (§1.1), and `migam-favicons/` was re-rendered from the corrected mark at identical
 framing. So the mark is now brandbook-accurate even though the surrounding UI palette is
 not — that split is deliberate. Use the SVG as-is; don't re-sample it from screenshots.
+
+`logo-migam-horizontal.svg` (added 2026-08) was rebuilt from the official horizontal
+full-color lockup (`migam-logo-horizontal-fullcolor.svg`, kept in this repo as reference):
+the **wordmark paths are copied verbatim** from that trademarked artwork, while the mark —
+whose geometry in the source file was corrupted — was re-set from the corrected
+`logo-migam-icon.svg`, scaled into the exact slot the original mark occupied. Layout,
+proportions, and viewBox match the source file, so it's a drop-in replacement.
 
 ### 7.3 Open question (not for agents to resolve)
 
