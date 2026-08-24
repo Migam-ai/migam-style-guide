@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 798.26 798.26" role="img" aria-label="Migam">
+  <title>Migam</title>
+  <!-- Canonical Migam mark (logo-migam-icon.svg shape) in the brandbook symbol framing; gradient distribution per the brandbook. -->
+  <defs>
+    <linearGradient id="mg-s-grayscale-teal" gradientUnits="userSpaceOnUse" x1="-7.65" y1="13.27" x2="141.11" y2="162.03">
+      <stop offset="0" stop-color="#434343"/>
+      <stop offset="0.56" stop-color="#656565"/>
+      <stop offset="1" stop-color="#707070"/>
+    </linearGradient>
+    <linearGradient id="mg-s-grayscale-teal-dot" gradientUnits="userSpaceOnUse" x1="50.59" y1="162.55" x2="122.63" y2="162.55">
+      <stop offset="0" stop-color="#707070"/>
+      <stop offset="0.44" stop-color="#656565"/>
+      <stop offset="1" stop-color="#434343"/>
+    </linearGradient>
+    <linearGradient id="mg-s-grayscale-amber" gradientUnits="userSpaceOnUse" x1="273" y1="12.66" x2="124.64" y2="161.03">
+      <stop offset="0" stop-color="#818181"/>
+      <stop offset="0.52" stop-color="#a2a2a2"/>
+      <stop offset="1" stop-color="#d2d2d2"/>
+    </linearGradient>
+    <linearGradient id="mg-s-grayscale-amber-dot" gradientUnits="userSpaceOnUse" x1="140.18" y1="162.55" x2="212.22" y2="162.55">
+      <stop offset="0" stop-color="#818181"/>
+      <stop offset="0.52" stop-color="#a2a2a2"/>
+      <stop offset="1" stop-color="#d2d2d2"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(23.43 125.47) scale(2.7367)">
+    <path fill="url(#mg-s-grayscale-teal)" d="M64 0a64 64 0 0 1 64 64v100H92v-36H64A64 64 0 0 1 64 0Z"/>
+    <circle fill="url(#mg-s-grayscale-teal-dot)" cx="92" cy="164" r="36"/>
+    <path fill="url(#mg-s-grayscale-amber)" d="M210 0a64 64 0 0 1 0 128H182v36h-36V64A64 64 0 0 1 210 0Z"/>
+    <circle fill="url(#mg-s-grayscale-amber-dot)" cx="182" cy="164" r="36"/>
+  </g>
+</svg>

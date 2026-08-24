@@ -33,7 +33,7 @@ Accessibility is the product *and* the design ethic — always meet WCAG AA cont
 
 ### 1.1 Logo mark & horizontal lockup
 
-Two logo files ship next to this guide:
+Three logo files ship next to this guide:
 
 - **[`logo-migam-icon.svg`](./logo-migam-icon.svg)** — the mark alone: two rounded hook
   forms with dots, teal on the left, amber→orange on the right. `viewBox="0 0 274 200"`,
@@ -41,12 +41,16 @@ Two logo files ship next to this guide:
 - **[`logo-migam-horizontal.svg`](./logo-migam-horizontal.svg)** — the horizontal lockup:
   the same mark plus the lowercase **"migam" wordmark** to its right, taken verbatim from
   the registered trademark artwork. `viewBox="0 0 2316.31 756.95"`, wordmark in black.
+- **[`logo-migam-horizontal-white.svg`](./logo-migam-horizontal-white.svg)** — the same
+  lockup with a **white wordmark** (the brandbook's "white" variant) for dark backgrounds.
+  The mark keeps its full-color gradients; only the wordmark changes.
 
 **Which one:** use the **horizontal lockup** where the brand introduces itself — page
 headers, document covers, slide title/closing pages, email footers. Use the **mark alone**
 in compact or square contexts — favicons, avatars, app icons, tight navbars, or next to
-text that already says "Migam." The lockup's wordmark is black, so it only goes on light
-backgrounds (white / mint); on the dark hero gradient use the mark alone.
+text that already says "Migam." The default lockup's wordmark is black, so it only goes on
+light backgrounds (white / mint); on the dark hero gradient use the **white-wordmark
+lockup** — or the mark alone where the name is already present.
 
 **Always use the files.** Never redraw the mark, rebuild it from tokens, approximate it
 with shapes, or hand-set a wordmark next to the mark — reference or inline the SVGs.
@@ -63,9 +67,11 @@ with shapes, or hand-set a wordmark next to the mark — reference or inline the
 ```
 
 **Logo-only colors.** The mark carries its own gradients, and the lockup's wordmark is
-pure black — trademarked artwork, exempt from the "never `#000`" text rule. Neither is a
-palette token: never pull the gradients into UI, charts, text, or backgrounds, and never
-recolor the wordmark to ink or teal. Brand UI stays on `#0F6B68`.
+pure black (or pure white in the dark-background file) — trademarked artwork, exempt from
+the "never `#000`" text rule. Neither is a palette token: never pull the gradients into UI,
+charts, text, or backgrounds, and never recolor the wordmark to ink or teal — the only
+sanctioned wordmark colors are the shipped black and white files. Brand UI stays on
+`#0F6B68`.
 
 These are the brandbook's two supplementary ramps — **Gradient 1** (teal) and **Gradient 2**
 (amber), from `migam-brandbook-2025.pdf` p. 7 — applied forward or reversed per element.
@@ -87,8 +93,9 @@ Unlike the palette in §2, the mark *does* follow the brandbook; see §7.2.
   that. Lockup `34px` tall on screen (the mark inside it is 72% of the height); in print
   follow the brandbook's per-variant minimums (15/10/8 mm).
 - **Backgrounds:** the mark holds on white, `--surface-mint-50/100`, and the dark teal hero
-  gradient. The lockup (black wordmark) is **light backgrounds only**. On photos or busy
-  fills, set either on a white pill/card first.
+  gradient. The default lockup (black wordmark) is **light backgrounds only**; on dark
+  backgrounds use `logo-migam-horizontal-white.svg`. On photos or busy fills, set either
+  on a white pill/card first.
 - **Scaling:** set one dimension and let the other follow (`height:auto`); the `viewBox`
   preserves the ratio. Never stretch to fit a box.
 - **Slides:** PowerPoint and Keynote take the SVG directly. Google Slides doesn't — export a
@@ -97,7 +104,8 @@ Unlike the palette in §2, the mark *does* follow the brandbook; see §7.2.
 **Don't**
 
 - Don't recolor the mark — no flat teal, no white/black knockout, no inverted variant.
-- Don't recolor the lockup's wordmark either — it stays black, so don't put it on dark.
+- Don't recolor the lockup's wordmark either — black on light, and on dark use the shipped
+  white-wordmark file; never tint it yourself.
 - Don't add shadows, glows, strokes, or filters to either file.
 - Don't rotate, skew, stretch, crop, or rearrange the two halves — or the mark/wordmark
   spacing in the lockup.
@@ -403,7 +411,8 @@ presentation text.
 
 A JSON token file (`migam-tokens.json`) and a CSS variables file (`migam-tokens.css`) sit
 next to this guide for direct import into apps or build pipelines. The logo files sit there
-too — `logo-migam-icon.svg` and `logo-migam-horizontal.svg` — and the JSON carries their
+too — `logo-migam-icon.svg`, `logo-migam-horizontal.svg`, and
+`logo-migam-horizontal-white.svg` — and the JSON carries their
 metadata under `logo` (file names, `viewBox`, clear space, minimum sizes, and the logo-only
 gradients). The gradients are deliberately **absent from `migam-tokens.css`** so they can't
 leak into UI code.
@@ -475,11 +484,25 @@ framing. So the mark is now brandbook-accurate even though the surrounding UI pa
 not — that split is deliberate. Use the SVG as-is; don't re-sample it from screenshots.
 
 `logo-migam-horizontal.svg` (added 2026-08) was rebuilt from the official horizontal
-full-color lockup (`migam-logo-horizontal-fullcolor.svg`, kept in this repo as reference):
-the **wordmark paths are copied verbatim** from that trademarked artwork, while the mark —
-whose geometry in the source file was corrupted — was re-set from the corrected
-`logo-migam-icon.svg`, scaled into the exact slot the original mark occupied. Layout,
+full-color lockup (`migam-logo-horizontal-fullcolor.svg` from the brandbook export set):
+the **wordmark paths are copied verbatim** from that trademarked artwork; the **mark shape
+is deliberately the repo's `logo-migam-icon.svg`** (brand-owner decision, 2026-08-20: the
+cleaner geometry — detached circular dots, no teardrop joins — is preferred over the
+source drawing), scaled into the exact slot the original mark occupied; and the
+**gradient distribution follows the brandbook lockup** (45°/135° diagonal sweeps, stop
+offsets .44/.56/.52), re-expressed in the mark's 274×200 coordinate space. Layout,
 proportions, and viewBox match the source file, so it's a drop-in replacement.
+`logo-migam-horizontal-white.svg` (added 2026-08-20) is the same lockup with the
+brandbook's white-wordmark colorway for dark backgrounds.
+
+The full brandbook export set in **[`SVG/`](./SVG/)** (horizontal + vertical lockups in
+seven colorways each — black, fullcolor, grayscale, grayscale-white, white, white-mono,
+white-outline — plus three standalone symbols) was regenerated 2026-08-20 under the same
+rule: wordmark paths verbatim, mark shape = the canonical `logo-migam-icon.svg` geometry,
+per-colorway fills and gradient stops taken from the original brandbook exports. The
+regeneration also normalized layout — the original exports placed the mark and wordmark at
+slightly different coordinates from file to file; all regenerated files share one geometry
+per orientation.
 
 ### 7.3 Open question (not for agents to resolve)
 

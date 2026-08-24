@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 798.26 798.26" role="img" aria-label="Migam">
+  <title>Migam</title>
+  <!-- Canonical Migam mark (logo-migam-icon.svg shape) in the brandbook symbol framing; gradient distribution per the brandbook. -->
+  <g transform="translate(23.43 125.47) scale(2.7367)">
+    <path fill="#ffffff" d="M64 0a64 64 0 0 1 64 64v100H92v-36H64A64 64 0 0 1 64 0Z"/>
+    <circle fill="#ffffff" cx="92" cy="164" r="36"/>
+    <path fill="#ffffff" d="M210 0a64 64 0 0 1 0 128H182v36h-36V64A64 64 0 0 1 210 0Z"/>
+    <circle fill="#ffffff" cx="182" cy="164" r="36"/>
+  </g>
+</svg>

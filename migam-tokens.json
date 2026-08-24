@@ -78,8 +78,20 @@
       "minHeight": "34px",
       "wordmark": "black — trademarked artwork, never recolor; light backgrounds only",
       "backgrounds": ["#FFFFFF", "#F1F7F6", "#E7F3F2"],
-      "use": "Where the brand introduces itself: page headers, doc covers, slide title pages. Use the mark alone in compact/square or dark contexts.",
-      "note": "Wordmark paths verbatim from the trademarked horizontal lockup; mark re-set from logo-migam-icon.svg (2026-08)."
+      "use": "Where the brand introduces itself: page headers, doc covers, slide title pages. Use the mark alone in compact/square contexts.",
+      "note": "Wordmark verbatim from the trademarked horizontal lockup; mark shape = logo-migam-icon.svg (deliberate), gradient distribution per the brandbook lockup (2026-08).",
+      "darkBackground": {
+        "file": "logo-migam-horizontal-white.svg",
+        "viewBox": "0 0 2316.31 756.95",
+        "minHeight": "34px",
+        "wordmark": "white — for dark backgrounds only; mark keeps its full-color gradients",
+        "backgrounds": ["gradient.hero", "#0B3534"],
+        "note": "Brandbook 'white' colorway rebuilt on the same geometry as logo-migam-horizontal.svg (2026-08-20)."
+      }
+    },
+    "pack": {
+      "dir": "SVG/",
+      "note": "Full logo pack regenerated 2026-08-20 with the canonical mark shape: horizontal + vertical lockups in 7 colorways (black, fullcolor, grayscale, grayscale-white, white, white-mono, white-outline) + 3 standalone symbols. Colorways per the brandbook export set; one normalized geometry per orientation."
     },
     "icons": {
       "dir": "migam-favicons/",
