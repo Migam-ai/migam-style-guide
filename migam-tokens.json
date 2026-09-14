@@ -93,6 +93,24 @@
       "dir": "SVG/",
       "note": "Full logo pack regenerated 2026-08-20 with the canonical mark shape: horizontal + vertical lockups in 7 colorways (black, fullcolor, grayscale, grayscale-white, white, white-mono, white-outline) + 3 standalone symbols. Colorways per the brandbook export set; one normalized geometry per orientation."
     },
+    "signLanguageSymbol": {
+      "$note": "International sign-language/interpreting access symbol in a Migam colorway. NOT the Migam logo — never substitute it for logo-migam-icon.svg, lock it up with the wordmark, or use it as an avatar/favicon. It marks an interpreted feature.",
+      "dir": "SVG/",
+      "viewBox": "0 0 512 429",
+      "fillRule": "evenodd",
+      "ariaLabel": "Język migowy",
+      "minWidth": "48px",
+      "minPrintWidth": "15mm",
+      "clearSpace": "50 viewBox units (half a finger loop) on all four sides",
+      "handGap": "22 viewBox units (4.4% of width) — keeps the hands readable in the mono files; never close it with a stroke, outline, or shadow",
+      "altText": "Name the service ('Tłumaczenie na język migowy' / 'Sign language interpreting'), never the picture. Decorative next to a label that says it: alt=\"\".",
+      "colorways": {
+        "gradient": { "file": "migam-sign-language-gradient.svg", "left": "gradients.tealHook", "right": "gradients.amberSignHand", "backgrounds": ["#FFFFFF", "#F1F7F6", "#E7F3F2"] },
+        "black":    { "file": "migam-sign-language-black.svg", "fill": "#000000", "use": "one-colour repro only" },
+        "white":    { "file": "migam-sign-language-white.svg", "fill": "#FFFFFF", "backgrounds": ["gradient.hero", "#0B3534", "photos"] }
+      },
+      "note": "Added 2026-09-14. Shape traced from the source artwork; gradient stops are the brandbook ramps, so it sits beside the logo without clashing. Three files are the whole set — no flat teal, orange, or grayscale variant."
+    },
     "icons": {
       "dir": "migam-favicons/",
       "deploy": "Copy to the web root — site.webmanifest uses root-absolute icon paths.",
@@ -113,7 +131,8 @@
       "tealHook":  { "stops": ["#015F62", "#008F96", "#00A299"], "direction": "top-left to bottom-right", "ramp": "Gradient 1" },
       "tealDot":   { "stops": ["#00A299", "#008F96", "#015F62"], "direction": "left to right", "ramp": "Gradient 1 reversed" },
       "amberHook": { "stops": ["#F8DB36", "#E99138", "#DB6136"], "direction": "bottom-left to top-right", "ramp": "Gradient 2 reversed" },
-      "amberDot":  { "stops": ["#DB6136", "#E99138", "#F8DB36"], "direction": "left to right", "ramp": "Gradient 2" }
+      "amberDot":  { "stops": ["#DB6136", "#E99138", "#F8DB36"], "direction": "left to right", "ramp": "Gradient 2" },
+      "amberSignHand": { "stops": ["#DB6136", "#E99138", "#F8DB36"], "direction": "bottom-right to top-left", "ramp": "Gradient 2", "usedBy": "signLanguageSymbol — right hand" }
     }
   },
   "voice": {

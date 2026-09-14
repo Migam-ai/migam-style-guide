@@ -21,6 +21,7 @@ voice examples, and one-click downloads of every file below.
 | [`logo-migam-icon.svg`](./logo-migam-icon.svg) | **The Migam mark.** Drop into apps, decks, and docs as-is. Usage rules (clear space, min size, don'ts) in §1.1 of the guide. |
 | [`logo-migam-horizontal.svg`](./logo-migam-horizontal.svg) | **Horizontal lockup** — mark + "migam" wordmark. For headers, covers, title slides; light backgrounds only. Rules in §1.1. |
 | [`logo-migam-horizontal-white.svg`](./logo-migam-horizontal-white.svg) | **Horizontal lockup for dark backgrounds** — same mark, white wordmark. Rules in §1.1. |
+| [`SVG/migam-sign-language-*.svg`](./SVG/) | **Sign-language symbol** — two hands in the interpreting gesture, in `gradient`, `black`, and `white`. Marks an interpreted feature; **not** a logo substitute. Rules in §1.3. |
 | [`SVG/`](./SVG/) | Full logo pack: horizontal + vertical lockups in 7 colorways (black, fullcolor, grayscale, grayscale-white, white, white-mono, white-outline) + 3 standalone symbols. All carry the canonical mark shape. |
 | [`migam-favicons/`](./migam-favicons/) | Favicon + app-icon set (`.ico`, square `.svg`, apple-touch, PWA 192/512, maskable, `site.webmanifest`). Copy to your app's web root — see §1.2. |
 
@@ -38,6 +39,9 @@ https://raw.githubusercontent.com/Migam-ai/migam-style-guide/main/migam-tokens.j
 https://raw.githubusercontent.com/Migam-ai/migam-style-guide/main/logo-migam-icon.svg
 https://raw.githubusercontent.com/Migam-ai/migam-style-guide/main/logo-migam-horizontal.svg
 https://raw.githubusercontent.com/Migam-ai/migam-style-guide/main/logo-migam-horizontal-white.svg
+https://raw.githubusercontent.com/Migam-ai/migam-style-guide/main/SVG/migam-sign-language-gradient.svg
+https://raw.githubusercontent.com/Migam-ai/migam-style-guide/main/SVG/migam-sign-language-black.svg
+https://raw.githubusercontent.com/Migam-ai/migam-style-guide/main/SVG/migam-sign-language-white.svg
 ```
 
 ## At a glance
@@ -45,6 +49,9 @@ https://raw.githubusercontent.com/Migam-ai/migam-style-guide/main/logo-migam-hor
 - **Logo:** `logo-migam-icon.svg` (mark) + `logo-migam-horizontal.svg` (lockup with wordmark;
   `-white` variant for dark backgrounds) — use as-is, never recolored; the gradients are
   logo-only, the wordmark stays black on light / white on dark.
+- **Sign-language symbol:** `SVG/migam-sign-language-{gradient,black,white}.svg` — the
+  two-hands interpreting symbol in the brand gradients plus mono black/white. It marks a
+  feature ("interpreting here"), never the brand; min `48px` wide. See §1.3.
 - **Icons:** `migam-favicons/` — favicon, apple-touch, PWA + maskable, manifest. Ready to ship.
 - **Brand color:** teal `#0F6B68` on white / soft-mint backgrounds.
 - **Accent:** orange `#EE7F2B` — primary CTA only, with dark text `#2B1503`.

@@ -148,6 +148,74 @@ the manifest icons 404 silently.
 Keep `theme-color` in the markup and in the manifest identical, and keep both on brand teal
 — that value paints browser and Android UI chrome, so the logo-only gradients don't belong there.
 
+### 1.3 Sign-language symbol
+
+Three more files in **[`SVG/`](./SVG/)** carry the international **sign-language symbol** —
+two hands in the interpreting gesture, in a Migam colorway:
+
+| File | Colorway | Where it goes |
+|---|---|---|
+| [`migam-sign-language-gradient.svg`](./SVG/migam-sign-language-gradient.svg) | Brand gradients — teal left hand, amber right | Default. White and mint backgrounds. |
+| [`migam-sign-language-black.svg`](./SVG/migam-sign-language-black.svg) | Solid `#000000` | One-color repro: stamps, engraving, single-ink print, faxable forms. |
+| [`migam-sign-language-white.svg`](./SVG/migam-sign-language-white.svg) | Solid `#FFFFFF` | Dark backgrounds — the hero gradient, `#0B3534`, photos. |
+
+All three share one geometry and `viewBox="0 0 512 429"`, use `fill-rule="evenodd"` so
+the finger loops are real holes rather than white fills, and already carry `role="img"` +
+`aria-label="Język migowy"`.
+
+**It is not the logo.** This symbol says "sign language here," not "Migam." Never swap it
+in for `logo-migam-icon.svg`, never lock it up beside the wordmark, never make it an avatar
+or favicon. It marks a **feature**: an interpreted stream, a PJM video, a "call an
+interpreter" button, a desk or room where interpreting is available.
+
+**Colors.** The gradient file reuses the mark's two brandbook ramps — Gradient 1 on the left
+hand, Gradient 2 on the right — so the symbol and the logo can share a page without clashing.
+
+| Hand | Gradient | Direction |
+|---|---|---|
+| Left (teal) | `#015F62` → `#008F96` → `#00A299` | diagonal, top-left → bottom-right |
+| Right (amber) | `#DB6136` → `#E99138` → `#F8DB36` | diagonal, bottom-right → top-left |
+
+These stay **logo-only**, exactly like the mark's gradients (§2.4) — never pull them into
+UI, charts, or text. And don't invent a fourth colorway: no flat teal, no brand orange, no
+grayscale. The three shipped files are the whole set.
+
+**Placement rules**
+
+- **Minimum size:** `48px` wide (≈`40px` tall) on screen, `15mm` wide in print. The symbol
+  carries more detail than the mark, so it needs more room — under `48px` the fingers close
+  up and it turns into a smudge. Below that, use a text label instead.
+- **Clear space:** half a finger-loop — `50` viewBox units, ≈10% of the symbol's width — on
+  all four sides.
+- **Mind the gap.** The two hands are separated by `22` viewBox units (4.4% of the width),
+  and that gap is load-bearing: it is the only thing keeping them readable as two hands in
+  the black and white files. Never add a stroke, outline, glow, or drop shadow that closes it.
+- **Backgrounds:** gradient on white and `--surface-mint-50/100`; the white file on the hero
+  gradient, `#0B3534`, and photos; the black file only for genuine one-color repro.
+- **Scaling:** set one dimension and let the other follow. Never stretch to fit a box.
+
+```html
+<!-- marks an interpreted feature, so it carries meaning -->
+<img src="SVG/migam-sign-language-gradient.svg"
+     alt="Tłumaczenie na język migowy" width="64" height="54">
+
+<!-- same symbol on the dark hero gradient -->
+<img src="SVG/migam-sign-language-white.svg"
+     alt="Tłumaczenie na język migowy" width="64" height="54">
+
+<!-- decorative — the button label next to it already says this -->
+<img src="SVG/migam-sign-language-gradient.svg" alt="" width="48" height="40">
+```
+
+**Alt text names the service, not the picture.** "Tłumaczenie na język migowy" / "Sign
+language interpreting" — never "dwie dłonie", "two hands", or "logo". If the symbol sits
+next to a label that already says it, the image is decorative: `alt=""`.
+
+**Provenance.** The shape is the international sign-language / interpreting access symbol in
+common use, not Migam-original artwork — that is exactly why it works, because people
+already recognize it. These files are a Migam colorway of it. Recoloring is sanctioned (the
+three files above); redrawing the shape is not.
+
 ---
 
 ## 2. Design tokens
