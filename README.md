@@ -23,6 +23,8 @@ voice examples, and one-click downloads of every file below.
 | [`logo-migam-horizontal-white.svg`](./logo-migam-horizontal-white.svg) | **Horizontal lockup for dark backgrounds** — same mark, white wordmark. Rules in §1.1. |
 | [`SVG/migam-sign-language-*.svg`](./SVG/) | **Sign-language symbol** — two hands in the interpreting gesture, in `gradient`, `black`, and `white`. Marks an interpreted feature; **not** a logo substitute. Rules in §1.3. |
 | [`SVG/`](./SVG/) | Full logo pack: horizontal + vertical lockups in 7 colorways (black, fullcolor, grayscale, grayscale-white, white, white-mono, white-outline) + 3 standalone symbols. All carry the canonical mark shape. |
+| [`PNG/`](./PNG/) | **PNG exports** of everything in `SVG/` plus the three root logos — transparent background, `.png` at the SVG's native size and `@2x.png`. For tools that don't take SVG (Office, Canva, social). Rebuild with `python PNG/build-pngs.py`. |
+| [`banners/`](./banners/) | **Social banners** — LinkedIn profile/company, X header, Facebook cover; `outline` and `fullcolor` variants as `.svg`, `.png`, `@2x.png`. See [`banners/README.md`](./banners/README.md). |
 | [`migam-favicons/`](./migam-favicons/) | Favicon + app-icon set (`.ico`, square `.svg`, apple-touch, PWA 192/512, maskable, `site.webmanifest`). Copy to your app's web root — see §1.2. |
 
 ## Use it with an AI agent
